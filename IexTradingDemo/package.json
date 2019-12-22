@@ -1,0 +1,12 @@
+{
+  "name": "iex-trading-demo",
+  "version": "0.0.0",
+  "description": "IexTradingDemo",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "socket.io-client": "^2.3.0"
+  }
+}
