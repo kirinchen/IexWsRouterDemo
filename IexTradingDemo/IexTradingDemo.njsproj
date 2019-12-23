@@ -32,6 +32,7 @@
     <Compile Include="DemoIexWsClient.js" />
     <Compile Include="IexWsClient.js" />
     <Compile Include="server.js" />
+    <Compile Include="StockPerMin.js" />
     <Compile Include="Symbols.js" />
     <Compile Include="DemoWsClient.js" />
     <Content Include="package.json" />

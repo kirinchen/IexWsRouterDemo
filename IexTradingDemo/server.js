@@ -1,11 +1,14 @@
 const
     io = require("socket.io"),
     server = io.listen(8000),
-    iexClient = require("./IexWsClient");
+    iexClient = require("./IexWsClient"),
+    stockDao = require("./StockPerMin");
+
 
 let sequenceNumberByClient = new Map();
 iexClient.connect(msg => {
     console.log("Server:" + msg);
+    stockDao.add(msg);
 });
 
 // event fired every time a new client connects:
