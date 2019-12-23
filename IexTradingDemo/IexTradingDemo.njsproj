@@ -29,9 +29,11 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DemoIexWsClient.js" />
     <Compile Include="IexWsClient.js" />
     <Compile Include="server.js" />
     <Compile Include="Symbols.js" />
+    <Compile Include="DemoWsClient.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
