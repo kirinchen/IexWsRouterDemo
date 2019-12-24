@@ -16,6 +16,7 @@ function StockList(syb) {
 
 
     function cleanExpire() {
+        if (self.data.length <= 1) return; //保留只有一筆的情形,發生在太久沒收到資料時
         self.data = self.data.filter(d => {
             return d.time > Date.now() - 60 * 1000;
         });
@@ -48,8 +49,6 @@ function StockList(syb) {
 
 
 }
-
-
 
 let map = new Map();
 

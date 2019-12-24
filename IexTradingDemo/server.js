@@ -57,15 +57,20 @@ server.on("connection", (socket) => {
     socket.on("disconnect", () => {
         /*sequenceNumberByClient.delete(socket);
         console.info(`Client gone [id=${socket.id}]`);*/
+        subscribeList.remove(socket);
     });
 
     socket.on("subscribe", msg => {
-        console.info(`test [id=${socket.id}] ` + msg);
+        console.info(`subscribe [id=${socket.id}] ` + msg);
         subscribeList.add(socket);
         stockDaos.forEach((syb, dao) => {
             subscribeList.post(dao.calcKData());
         });
+    });
 
+    socket.on("unsubscribe", msg => {
+        console.info(`unsubscribe [id=${socket.id}] ` + msg);
+        subscribeList.remove(socket);
     });
 
 });
